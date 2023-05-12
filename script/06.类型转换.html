@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script/06.类型转换.html</title>
+    <script>
+        /*
+        类型转换值，将一种类型转换为其他类型
+        将其他类型转换为（字符串，数值，布尔值）
+        1.用toString（）方法将其他类型转换为字符串
+            调用xxx的yyy方法----》xxx.yyy()
+            由于null和undefined中没有toString（），所以调用toSting时会报错   
+         2.调用String（）函数将其他类型转换为字符串
+            调用xxx函数------》xxx（）
+            原理：对于拥有toString（）方法的值调用String（）函数时，实际上就是在调用toString（）方法
+            对于null，则直接转换为字符串“null”
+            对付undefined，直接转换为字符串“undefined”
+
+        */
+        //转换为字符串
+        let a=20
+        console.log(typeof a)
+        a=a.toString()
+        console.log(typeof a)
+        let b=null
+        b=String(b)
+        console.log(typeof b ,b)
+
+        //转换成数值
+      /*   1.使用Number（）函数来将其他类型转换成数值
+        转换的情况
+            字符串；如果是一个合法的数字，则自动会转换成合法的对应的数值
+                    果字符串不是合法数字，则转换为NaN
+                    如果字符串是空串或纯空格的字符串，则转换为0
+            布尔值：true转换为1，flase转换为0
+            null：转换为0
+            undefined：转换为NaN； */
+        let c="123"
+        c=Number(c)
+        console.log(typeof c,c)
+   /*      用来专门将字符串转换成数值的两个方法
+        ParseInt()--将一个字符串转换成一个整数
+        （解析时会自左向右读取一个字符串，直到读取字符串中所有有效的整数位）也可以用来临时取整
+        parseFloat--将一个字符串转换成一个浮点数（解析时会自左向右读取一个字符串，直到读取字符串中所有有效的小数位） */
+        let e=456.123
+        c=parseInt(c)//临时取整
+        let d="555.222"
+        console.log(typeof c ,c)
+        d=parseFloat(d)
+        console.log(typeof d ,d)
+        /* 用Boolean（）函数来将其他类型转换为布尔值
+        转换情况：
+        数字：0和NaN转换为false，其余为true
+        字符串：空串是flase，其余是true
+        null和undefined：都转换为flase
+        对象：对象会转换成true
+        所有表示空性的没有的错误的值都会转换为false：
+        0，NaN，空串，null，undefined，false
+        */
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

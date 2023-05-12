@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script/13.综合案例渲染表格案例.html</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+        table{
+            border-collapse: collapse;/*合并相邻边框*/
+            height:80px;
+            margin:0 auto;
+        }
+        th,td{
+            padding:5px 20px;
+            text-align: center; 
+        }
+        table,tr,td,th{
+            border: 1px black solid;
+        }
+    </style>
+    <script>
+  /*       //1.用户输入
+        let price = +prompt("请输入商品价格")
+        let num = +prompt("请输入商品数量")
+        let address = prompt("请输入收货地址")
+        // 2.计算总额
+        let sum =price * num
+        //3.页面打印渲染
+        document.write(`  
+        <table>
+            <thead>
+                <h2>订单确认</h2>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>商品名称</th>
+                    <th>商品价格</th>
+                    <th>商品数量</th>
+                    <th>商品总价</th>
+                    <th>收货地址</th>
+                </tr>
+                <tr>
+                    <td>小米手机青春plus啦啦啦</td>
+                    <td>${price}元</td>
+                    <td>${num}</td>
+                    <td>${sum}元</td>
+                    <td>${address}</td>
+                </tr>
+            </tbody>
+        </table>
+        `) */
+        
+        //变量
+        let total = +prompt("请输入银行卡总额")
+        let waterPrice=+prompt("请输入水费")
+        let electricPrice=+prompt("请输入电费")
+        let internetPrice=+prompt("请输入网费")
+        //计算余额
+        let surplusPrice=total-waterPrice-electricPrice-internetPrice
+        //3.表格页面渲染
+        document.write(`
+                <table>
+                <h2>消费支出</h2>
+                <tr>
+                    <th>银行卡总金额</th>
+                    <th>水费</th>
+                    <th>电费</th>
+                    <th>网费</th>
+                    <th>银行卡总余额</th>
+                </tr>
+                <tr>
+                    <td>${total}元</td>
+                    <td>${waterPrice}元</td>
+                    <td>${electricPrice}元</td>
+                    <td>${internetPrice}元</td>
+                    <td>${surplusPrice}元</td>
+                </tr>
+         
+        </table>
+        `)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

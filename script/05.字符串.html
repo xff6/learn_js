@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script/05.字符串.html</title>
+    <script>
+        let a=10
+        let b=10n
+        //通过typeof检查不同的值的类型，会根据不同的值返回不同的结果
+        console.log(typeof a)
+        console.log(typeof b)
+        // 使用单引号或者双引号来表示字符串
+        let a1 = '22'
+        let c="你好"
+        document.write(c)
+        //转义字符 \
+        document.write("\\\\\\\\")
+     /*    
+        长字符串（模板字符串),
+            传统双引号不能跨行使用，用反单引号可以跨行
+            模板字符串可以嵌入变量
+         */
+        a=`今天天气
+        真好来啊拉拉阿拉拉了`
+        document.write(a+"\n")
+        let name="孙悟空"
+        let str=`你好 ${name}`
+        document.write(str)
+    /*其他字符类型
+        1.布尔值：（boolean）进行逻辑判断，true false
+        2.空值（null）：表示一个空对象，空值只有一个null（使用typeof检查会返回object）
+        3.未定义（undefined）：当声明一个变量没有给值时就是undefined，用typeof检查会返回undefined
+        4.符号（symbol）：用来创建一个唯一的标识
+    */
+   let bool=true;
+   let d=null;
+   let e=undefined;
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script/12.显式转换和显式转换.html</title>
+</head>
+<body>
+    <script>
+        //隐式转换
+        console.log(1+1)//2
+        console.log(1+'1')//11
+        console.log(1-'1')//0
+        console.log('1'+'1')//11加号作为拼接
+        console.log('1'-'1')//0减法隐式转换成数值型
+        console.log(typeof '123')//string
+        console.log(typeof +'123')//number将字符串转换为number型的
+        console.log(+'12'+12)//24
+        console.log(+'12'-12)//0
+        //显式转换
+        let str="123"
+        console.log(typeof Number(str))
+        console.log(Number('pink'))
+        /* let num1 =Number(prompt('请输入数字'))
+        let num2 = +prompt('输入年薪') *///与上一行同等效果，将值转换成数值
+        // console.log(typeof num1,num1)
+        // console.log(typeof num2,num2)
+
+        //parseInt只展示整数部分
+        console.log(parseInt('12px'))
+        console.log(parseInt('12.59px'))
+        console.log(parseInt('12.22px'))
+        console.log(parseInt('abc12px'))
+        //parseFloat展示浮点数
+        console.log(parseFloat('12px'))
+        console.log(parseFloat('12.25px'))
+        console.log(parseFloat('12.33px'))
+        console.log(parseFloat('abc12px'))
+
+        //课后案例：输入两个数，计算两者的和，打印到页面中
+        //prompt:默认转换的是字符串类型的
+        let a = +prompt("请输入一个数")
+        let b = +prompt("请输入另一个数")
+        //以输入1 3 举例，得到的结果如下
+        alert(a+b)//4
+        alert("这两个数相加的结果是"+ a+b)//13
+        alert("这两个数相加的结果是"+ Number(a)+Number(b))//13
+        alert(`这两个数相加的结果是${a+b}`)//4
+        let c = Number(prompt("请输入一位数"))
+        let d = Number(prompt("请输入另一位数"))
+        // prompt(a+b)
+        alert("这两个数相加的结果是"+ c+d)//13
+        alert(`这两个数相加的结果是${c+d}`)//4
+    </script>
+</body>
+</html>

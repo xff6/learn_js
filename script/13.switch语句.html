@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <!--    <script>
+        //case 1:（格式要牢记，先写数值，再写冒号：）
+        let a = +prompt(`请输入一位数`)
+        switch(a){
+            case 1:
+                document.write("你选择的是一")
+                break
+            case 2:
+                document.write("你选择的是二")
+                break
+            case 3:
+                document.write("你选择的是三")
+                break
+            case 4:
+                document.write("你选择的是四")
+                break
+            case 5:
+                document.write("没有合适的")
+                break
+        }
+    </script> -->
+    <script>
+        //简单计算器
+        let num1 = +prompt("请输入一位数")
+        let num2 = +prompt("请输入另一位数")
+        let sign = prompt("请选择符号")
+        switch(sign){
+            case '+':
+                alert(`这两个数的加法操作是${num1+num2}`)
+                break
+            case '-':
+                alert(`这两个数减法操作是${num1-num2}`)
+                break
+            case '*':
+                alert(`这两个数的乘法操作是${num1*num2}`)
+                break
+            case '/':
+                alert(`这两个数的除法操作是${num1/num2}`)
+                break
+            default:
+                alert('请输入相应数据')
+        }
+        
+    </script>
+</body>
+</html>
