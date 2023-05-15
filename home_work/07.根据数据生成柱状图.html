@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home_work/07.根据数据生成柱状图.html</title>
+    <style>
+        .box1{
+            width: 800px;
+            height: 400px;
+            margin: 0 auto;
+            background-color: blanchedalmond;
+            display: flex;
+            justify-content: space-around;/*让盒子之间以相同的间隙隔开*/
+            align-items: end;/*让盒子里的盒子从下往上排布*/
+            border-left:3px solid pink;
+            border-bottom:3px solid pink;
+        }
+        .box{
+            width: 50px;
+            background-color:pink;
+            position:relative;
+        }
+        .box>h4{
+            display: inline-block;
+            width: 64px;
+            position:absolute;
+            bottom:-55px;
+            left: -5px;            
+        }
+        .box>span{
+            position: absolute;
+            top:-20px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let arr = []
+        for(let i =0;i<4;i++){
+            arr.push(prompt(`请输入第${i+1}季度数据`))
+        }
+        document.write(`<div class="box1">`)
+            for(let i=0;i<4;i++){
+                document.write(`
+                    <div class="box" style="height:${arr[i]}px">
+                    <span>${arr[i]}</span>
+                    <h4>第${i+1}季度</h4>
+                `)
+                document.write(`</div>`)
+            }
+        document.write(`</div>`)
+    </script>
+</body>
+</html>

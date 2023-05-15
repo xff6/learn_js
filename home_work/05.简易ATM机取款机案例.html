@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home_work/05.简易ATM机取款机案例.html</title>
+</head>
+<body>
+    <script>
+        //需求，用户可以选择存钱、取钱、查看余额和退出功能。
+       //准备一个总金额，总金额一定要放到循环外面，否则每次循环会重置数
+        let total=1000
+            let surplus=1000
+            let amount=0
+            let draw=0
+         //开始循环 输入框写到循坏里
+        while(true){
+            let selection = +prompt
+            (`
+            请您选择操作：
+            1.存钱
+            2.取钱
+            3.查询余额
+            4.退出
+            `)
+        
+        //2.根据输入做操作  (if 语句)
+        /*     if(selection === 1){
+                amount = +prompt("请输入您要存入的金额")
+                surplus +=amount
+                continue
+            }
+            else if(selection === 2){
+                draw = +prompt("请输入你要取出的金额")
+                surplus -= draw
+                continue
+            }
+            else if(selection === 3){
+                alert (surplus)
+                continue
+            }
+            else if(selection === 4){
+                break
+            }
+            else {
+                alert("请输入正确的选项")
+                continue
+            } */
+            //switch语句
+            if(selection === 4)
+            {break}
+            switch(selection){
+                case 1: 
+                amount = +prompt("请输入您要存入的金额")
+                surplus +=amount
+                continue
+                case 2:
+                draw = +prompt("请输入你要取出的金额")
+                surplus -= draw
+                continue
+                case 3:
+                alert (`您的银行卡余额是${surplus}`)
+                continue
+                default :
+                alert("请输入正确的选项")
+            }
+        }
+
+    </script>
+</body>
+</html>

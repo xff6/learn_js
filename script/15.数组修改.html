@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script/15.数组修改.html</title>
+</head>
+<body>
+    <script>
+        let arr1 = [1,2]
+        arr1[2] = 3
+        /*新增 
+        1.数组.push（数据）方法一个或多个元素添加到数组的末尾，并返回该数组的新长度（**重点）
+        2.数组.unshift(数据)方法一个或多个元素添加到数组的开头，并返回该数组的新长度
+        */
+        arr1.push('hao',1)
+        console.log(arr1.push('what'))//返回6
+
+        arr1.unshift('pink')
+        console.log(arr1)
+        document.write(arr1+'<br>')
+
+        //修改：重新赋值 数组【下标】=新值
+        arr1[1]='我把下标一的数改了'
+        document.write(arr1)
+
+        /*删除
+        1.数组.pop（），方法从数组中删除   最后一个   元素，并返回该元素的值
+        2.数组.shift（），方法从数组中删除   第一个  元素，并返回该元素的值
+        3.数组.splice（起始位置（下标），删除几个元素）
+        */
+       let arr2 = [1,2,3,4,5,6,7,8,9]
+       //1
+     /*   let a = arr2.pop()
+       console.log(arr2)
+       console.log(a)
+       //2
+       let b = arr2.shift()
+       console.log(arr2)
+       console.log(b) */
+       //3
+       let c = arr2.splice(2,1)//是从索引2的位置开始删，只删除1个
+       console.log(arr2)
+       console.log(c)
+    </script>
+</body>
+</html>

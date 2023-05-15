@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home_work/08.99乘法表呀.html</title>
+    <style>
+        div{
+            display: flex;
+        }
+        .boxes{
+            width: 80px;
+            height:30px;
+            background-color: #bff87a17;
+            color:#f87acc            
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write(`<div>`)
+            for(let i=1;i<=9;i++){
+                for(let j=1;j<=i;j++){
+                    let sum=i*j
+                    document.write(`
+                    <div class="boxes">
+                    ${i}x${j}=${sum}`)
+                    document.write(`</div>`)
+                    if(j>=i){
+                    document.write(`<br>`)
+                    }
+                }
+            }
+        document.write(`</div>`)
+    </script>
+    <div>
+        <div class="boxes"></div>
+    </div>
+</body>
+</html>

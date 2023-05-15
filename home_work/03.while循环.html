@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home_work/03.while循环.html</title>
+</head>
+<body>
+    <script>
+        //页面输出1-100的累加和
+        let i = 1
+        let sum = 0
+        while(i <= 100)
+        {
+            sum += i
+            i++
+        }
+        document.write(sum+'\n')
+        //页面输出1-100的偶数和
+        let num = 1
+        let total = 0
+        while(num<=100)
+        {
+            num++
+            if (num % 2 === 0)
+            { total += num } 
+       }
+        document.write(total)
+    </script>
+</body>
+</html>
