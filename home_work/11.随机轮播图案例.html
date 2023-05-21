@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home_work/11.随机轮播图案例.html</title>
+    <style>
+        * {
+        box-sizing: border-box;
+        }
+
+        .slider {
+        width: 560px;
+        height: 400px;
+        overflow: hidden;
+        }
+
+        .slider-wrapper {
+        width: 100%;
+        height: 320px;
+        }
+
+        .slider-wrapper img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        }
+
+        .slider-footer {
+        height: 80px;
+        background-color: rgb(100, 67, 68);
+        padding: 12px 12px 0 12px;
+        position: relative;
+        }
+
+        .slider-footer .toggle {
+        position: absolute;
+        right: 0;
+        top: 12px;
+        display: flex;
+        }
+
+        .slider-footer .toggle button {
+        margin-right: 12px;
+        width: 28px;
+        height: 28px;
+        appearance: none;
+        border: none;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+
+        .slider-footer .toggle button:hover {
+        background: rgba(255, 255, 255, 0.2);
+        }
+
+        .slider-footer p {
+        margin: 0;
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 10px;
+        }
+
+        .slider-indicator {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        }
+
+        .slider-indicator li {
+        width: 8px;
+        height: 8px;
+        margin: 4px;
+        border-radius: 50%;
+        background: #fff;
+        opacity: 0.4;
+        cursor: pointer;
+        }
+
+        .slider-indicator li.active {
+        width: 12px;
+        height: 12px;
+        opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slider-wrapper">
+            <img src = "../images/1.jpg" alt=""/>
+        </div>
+        <div class="slider-footer">
+            <p>展示第一张图片</p>
+            <ul class="slider-indicator">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="toggle">
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        //初始数据
+        const sliderData = [
+            {url:'../images/1.jpg',title:'第一张图片',color:'#666'},
+            {url:'../images/2.jpg',title:'第二张图片',color:'#666'},
+            {url:'../images/3.jpg',title:'第三张图片',color:'#666'},
+            {url:'../images/4.jpg',title:'第四张图片',color:'#666'},
+            {url:'../images/5.jpg',title:'第五张图片',color:'#666'},
+            {url:'../images/6.jpg',title:'第六张图片',color:'#666'},
+            {url:'../images/7.jpg',title:'第七张图片',color:'#666'},
+            {url:'../images/8.jpg',title:'第八张图片',color:'#666'},
+            {url:'../images/9.jpg',title:'第九张图片',color:'#666'},
+            {url:'../images/10.jpg',title:'第十张图片',color:'#666'},
+        ]
+        //1.需要一个随机数
+
+        function getRandomArbitrary(M, N) {
+        return (Math.random() * (M - N+1)) + N;
+        }
+
+        //2 把对应的数据渲染到标签里面
+
+        const random = parseInt(Math.random() * sliderData.length)
+        // console.log(sliderData[random])
+        //2.1获取图片
+        const img = document.querySelector('.slider-wrapper img')
+        //2.2 修改图片路径 = 对象.url
+        img.src = sliderData[random].url
+
+        //3把p里的内容更换
+
+        //3.1获取p
+        const p = document.querySelector('.slider-footer p')
+        // 3.2修改p里面的内容 ，标签.innerHtml
+        p.innerHTML = sliderData[random].title
+
+        // 4. 修改背景颜色
+
+        // 4.1获取需要修改的背景颜色的类名
+        const footer = document.querySelector('.slider-footer')
+        //4.2 通过style属性修改背景颜色，生成的是行内样式，权重比较高
+        footer.style.backgroundColor = sliderData[random].color
+
+        // 5. 小圆点
+        const li = document.querySelector(`.slider-indicator li:nth-child(${random + 1})`)
+        // 让当前这个小li 添加 active这个类
+        li.classList.add('active') 
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS阶段/10.用户倒计时效果.html</title>
+</head>
+<body>
+    <textarea name="" id="" cols="" rows="10">
+    啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+    啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+    啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+    啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+    啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+</textarea>
+<br>
+<button class="btn" disabled>我已阅读用户协议(5)</bbutton>
+    <script>
+        //1.获取元素
+        const btn = document.querySelector('.btn')
+        //2.倒计时
+        let i=5
+        //2.1开启定时器
+        let n = setInterval(function() {
+            i--
+            btn.innerHTML = `我已阅读用户协议(${i})`
+            if(i===0){
+                clearInterval(n)
+                btn.disabled = false
+                btn.innerHTML = '同意'
+            }
+        },1000)
+    </script>
+</body>
+</html>

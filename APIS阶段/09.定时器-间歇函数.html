@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //第一种方式
+        setInterval(function(){
+            console.log('一号定时器')
+        },1000)
+
+        //第二种方式
+        function fn(){
+            console.log('二号定时器')
+        }
+        //setInterval(fn,1000)//fn后面不用加小括号
+        let n = setInterval(fn,1000) //这里用let ，因为定时器一开一关在变化
+        //关闭定时器
+        clearInterval(n)
+    </script>
+</body>
+</html>

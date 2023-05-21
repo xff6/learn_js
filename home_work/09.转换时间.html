@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home_work/09.转换时间.html</title>
+</head>
+<body>
+    <script>
+        //需求：用户输入秒数，可以自动转换成时分秒
+        //1：用户输入数据
+        let second = prompt("请输入秒数")
+        //2.计算时分秒（封装函数）里面包括数字补零
+        function trans(time){
+            let h = parseInt(time/60/60%24)
+            let m = parseInt(time/60%60)
+            let s = parseInt(time%60)
+            h = h < 10 ? '0' + h : h
+            m = m < 10 ? '0' + m : m
+            s = s < 10 ? '0' + s : s
+            return `转换完之后是${h}:${m}:${s}`
+            
+        }
+        let str = trans(second)
+        document.write(str)
+    </script>
+</body>
+</html>

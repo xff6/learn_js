@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    <input type="text" value="电脑">
+    <script>
+        //1获取元素
+        const uname = document.querySelector('input')
+        // 2.获取值 获取表单里的值用的 表单.value
+        console.log(uname.value)
+        // console.log(uname.innerHTML)  innerHTML 得不到表单的内容
+        // 3.设置表单的值
+        uname.value='我要买电脑'
+        console.log(uname.value)
+        console.log(uname.type)
+        //修改表单类型  .type
+        uname.type = 'password'
+        console.log(uname.type)
+    </script> 
+
+</body>
+</html>

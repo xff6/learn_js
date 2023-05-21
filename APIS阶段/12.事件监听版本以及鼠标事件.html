@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS阶段/12.事件监听版本以及鼠标事件.html</title>
+</head>
+<body>
+    <button>我是个按钮</button>
+    <script>
+        const btn = document.querySelector('button')
+        //现在写法
+        btn.addEventListener('click',function(){
+            alert(11)
+        })
+          
+        //以前的写法
+        btn.onclick = function(){
+            alert(22)
+        }
+    </script>
+</body>
+</html>

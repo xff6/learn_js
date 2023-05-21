@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS阶段/06.通过classList修改样式.html</title>
+    <style>
+    div{
+        width: 200px;
+        height: 400px;
+        background-color: pink;
+    }
+    
+    .box{
+        width: 300px;
+        height: 400px;
+        background-color: rgb(209, 229, 97);
+        padding-left: 20px;
+        border: 1px solid red;
+        margin: auto;
+    }
+    .active{
+        color: red;
+        background-color: aqua;
+    }
+    </style>
+</head>
+<!-- classList是追加和删除不影响以前的类名 -->
+<body>
+    <div class="box">123</div>
+    <script>
+        // 1.获取元素
+        const box = document.querySelector('.box')
+        //2.修改样式 追加类add（） 类名不加点，并且是字符串
+        box.classList.add(`active`)
+        //3.删除类 remove()
+        box.classList.remove('box')
+        //4.切换类 toggle() 有还是没有，有就删掉，没有就加上
+        box.classList.toggle('active')
+    </script>
+</body>
+</html>

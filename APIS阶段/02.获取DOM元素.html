@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS阶段/02.获取DOM元素.html</title>
+</head>
+<body>
+    <div class="box">123</div>
+    <div class="box">lalla</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        //1.获取匹配的第一个元素
+        const box = document.querySelector('.box')
+        console.log(box)
+        const div = document.querySelector('div')
+        console.log(div)
+        //2.获取ul的第一个li
+        const li = document.querySelector('ul li')
+        console.log(li)
+        //3.获取ul的所有li
+        const ulli = document.querySelectorAll('li')
+        console.log(ulli)
+    </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home_work/12.轮播图定时版.html</title>
+    <style>
+        * {
+        box-sizing: border-box;
+        }
+
+        .slider {
+        width: 560px;
+        height: 400px;
+        overflow: hidden;
+        }
+
+        .slider-wrapper {
+        width: 100%;
+        height: 320px;
+        }
+
+        .slider-wrapper img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        }
+
+        .slider-footer {
+        height: 80px;
+        background-color: rgb(100, 67, 68);
+        padding: 12px 12px 0 12px;
+        position: relative;
+        }
+
+        .slider-footer .toggle {
+        position: absolute;
+        right: 0;
+        top: 12px;
+        display: flex;
+        }
+
+        .slider-footer .toggle button {
+        margin-right: 12px;
+        width: 28px;
+        height: 28px;
+        appearance: none;
+        border: none;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+
+        .slider-footer .toggle button:hover {
+        background: rgba(255, 255, 255, 0.2);
+        }
+
+        .slider-footer p {
+        margin: 0;
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 10px;
+        }
+
+        .slider-indicator {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        }
+
+        .slider-indicator li {
+        width: 8px;
+        height: 8px;
+        margin: 4px;
+        border-radius: 50%;
+        background: #fff;
+        opacity: 0.4;
+        cursor: pointer;
+        }
+
+        .slider-indicator li.active {
+        width: 12px;
+        height: 12px;
+        opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slider-wrapper">
+            <img src = "../images/1.jpg" alt=""/>
+        </div>
+        <div class="slider-footer">
+            <p>展示第一张图片</p>
+            <ul class="slider-indicator">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="toggle">
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        //获取元素
+        const img = document.querySelector('.slider-wrapper img')//不要忘记加点....
+        const p = document.querySelector(".slider-footer p")
+        const footer = document.querySelector(".slider-footer")
+        const sliderData = [
+         {url:'../images/1.jpg',title:'第一张图片',color:'#666'},
+         {url:'../images/2.jpg',title:'第二张图片',color:'#123'},
+         {url:'../images/3.jpg',title:'第三张图片',color:'#166'},
+         {url:'../images/4.jpg',title:'第四张图片',color:'#158'},
+         {url:'../images/5.jpg',title:'第五张图片',color:'#951'},
+         {url:'../images/6.jpg',title:'第六张图片',color:'#125'},
+         {url:'../images/7.jpg',title:'第七张图片',color:'#abc'},
+         {url:'../images/8.jpg',title:'第八张图片',color:'#cde'},
+         {url:'../images/9.jpg',title:'第九张图片',color:'#bbd'},
+         {url:'../images/10.jpg',title:'第十张图片',color:'#abb'},
+        ]
+         //1.右侧按钮事件
+            //1.1获取右侧按钮
+        const next = document.querySelector('.next')
+            //1.2注册点击事件
+        let i = 0 //信号量，控制播放图片张数
+            next.addEventListener('click',function () {
+              
+                // 或者 i = i >= 8 ? 0 : i
+                // console.log(11)
+                i++
+                //1.6判断条件 如果大于10 就复原为0
+                if(i>=sliderData.length){
+                    i=0
+                }
+                //1.3得到数据对象
+                // console.log(sliderData[i])
+               toggle()
+            })
+        //2.左侧按钮
+            //2.1获取左侧按钮
+            const prev = document.querySelector('.prev')//******不要忘记加点.了啊
+            prev.addEventListener('click',function(){
+            i--
+            //2.2判断条件 如果小于0 就爬到最后一张图 索引号是 数组长度-1
+            if(i<0){
+                i=sliderData.length-1
+            }
+            // 或者 i = i<0 ? (sliderData.length-1) :i
+
+            //调用函数
+            toggle()
+        })
+        
+        //声明一个渲染的函数作为复用
+        function toggle(){
+            img.src = sliderData[i].url
+            p.innerHTML = sliderData[i].title
+            footer.style.backgroundColor = sliderData[i].color 
+            //1.5更换小圆点  县一处原来的类名 ，当前li再添加 这个类名
+            document.querySelector('.slider-indicator .active').classList.remove('active')//这里active不加点
+            document.querySelector(`.slider-indicator li:nth-child(${i+1})`).classList.add('active')//这里active不加
+        }
+        // 3.自动播放
+        let timeId = setInterval(function(){
+            //利用js自动调用点击事件
+            next.click()
+        },500)
+        //4. 鼠标经过大盒子，停止定时器
+        const slider = document.querySelector('.slider')
+        //注册事件
+        slider.addEventListener('mouseenter',function(){
+        //停止定时器
+            clearInterval(timeId)
+        })
+        //5.鼠标经过大盒子，开启定时器
+        //注册事件
+        slider.addEventListener('mouseleave',function(){
+        //停止定时器
+        clearInterval(timeId)
+        //开启定时器
+            timeId = setInterval(function(){
+                //利用js自动调用点击事件 click（） 一定加小括号调用函数
+                next.click()
+            },500)
+        })
+       //点击小圆点获取图片
+       //获取元素
+       const active = document.querySelector('.active')
+       //console.log(li)
+       active.addEventListener('click',function(){
+       //切换对应的图片
+       active.addEventListener('click',function(){
+        
+       })
+
+       })
+        
+</script>
+</body>
+</html>

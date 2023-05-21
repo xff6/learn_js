@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home_work/10.随机更换背景图片.html</title>
+    <style>
+        body{
+            background: url(../images/5.jpg) no-repeat top center /cover ;
+            /* background-image:c; */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //取N-M的随机数
+        function getRandom(N,M){
+            return Math.floor(Math.random()*(M-N+1))+N
+        }
+        //随机数
+        const random =getRandom(1,10)
+        document.body.style.backgroundImage=`url(../images/${random}.jpg)`
+    </script>
+</body>
+</html>

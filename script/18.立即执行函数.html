@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //防止变量污染，like执行，多个立即执行函数之间要用分号隔开
+        (function(x,y){
+            console.log(x+y)
+        })(1,2);//(function(){})()小括号小括号，function小括号大括号,或者 (function(){}())
+        (function(x,y){
+            console.log(x+y)
+        })(1,2)
+
+
+        
+        //转换时间案例
+    </script>
+</body>
+</html>
