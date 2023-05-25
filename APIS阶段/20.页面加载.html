@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS阶段/20.页面加载，滚动尺寸事件.html</title>
+    <script>
+        //load事件：  等待页面所有资源加载完毕，就回去执行回调函数(监听整个页面资源给window加)
+        window.addEventListener('load',function(){
+            const btn = document.querySelector('button')
+            btn.addEventListener('click',function(){
+                alert(1)
+            })
+        })
+
+        img.addEventListener('load',function(){
+            //等待图片加载完毕，再去执行里面的代码
+        })
+
+        //DOMContentLoaded：  无需等待样式表，图像等完全加载（给document加）
+        document.querySelector('DOMContentLoaded',function(){
+            const bt = document.querySelector('button')
+            bt.addEventListener('click',function(){
+                alert(1)
+            })
+        })
+    </script>
+</head>
+<!-- 页面加载事件：
+    有时候 需要等页面资源池里玩了做一些事情，老代码喜欢吧script写在head中，这时候直接找dom元素找不到
+    页面加载事件：  window.addEventListener('load',function(){})
+
+
+
+ -->
+<body>
+    
+</body>
+</html>
