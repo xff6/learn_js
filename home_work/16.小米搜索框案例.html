@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home_work/16.小米搜索框案例.html</title>
+    <style>
+        .search{
+            border: 2px solid orange;
+        }
+        input{
+            width: 200px;
+            height: 40px;
+            
+        }
+        ul{
+            margin-top: 0;
+            width: 200px;
+            height: auto;
+            padding:0px;
+            border: 1px solid orange;
+            text-align: center;
+            display: none;
+        }
+        li{
+            font-size: 15px;
+            list-style: none;
+            height:30px;
+            line-height: 30px;
+        }
+        a{
+            text-decoration: none;
+            color:black;    
+        }
+        li:hover{
+            background-color: #6666663c;
+        }
+    </style>
+</head>
+<body>
+    <div class="mi">
+        <input type="search" placeholder="小米笔记本">
+        <ul class="result-list">
+            <li><a href="#">全部商品</a></li>
+            <li><a href="#">全部商品1</a></li>
+            <li><a href="#">全部商品2</a></li>
+            <li><a href="#">全部商品3</a></li>
+            <li><a href="#">全部商品4</a></li>
+            <li><a href="#">全部商品5</a></li>
+            <li><a href="#">全部商品6</a></li>
+            <li><a href="#">全部商品7</a></li>
+            <li><a href="#">全部商品8</a></li>
+        </ul>
+    </div>
+    <script>
+        const input = document.querySelector('[type=search]')
+        const ul = document.querySelector('.result-list')
+        input.addEventListener('focus',function(){
+            ul.style.display = 'block'
+            input.classList.add('search')
+        })
+        input.addEventListener('blur',function(){
+            ul.style.display = 'none'
+            input.classList.remove('search')
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.获取大复选框
+        const checkAll = document.querySelector('#checkAll')
+        //2.获取所有小复选框
+        const cks = document.querySelectorAll('.ck')
+        //3.点击大复选框， 注册事件
+        checkAll.addEventListener('click',function(){
+            //得到当前复选框的选中状态
+            // console.log(checkAll.checked)//得到true 或者false
+            //4.遍历所有的复选框 让小复选框的checked = 大复选框的checked
+            for(let i=0;i<cks.length;i++){
+                cks[i].checked = this.checked
+            }
+            //5.小复选框控制大复选框
+
+            for (let i=0;i<cks.length;i++){
+                cks[i].addEventListener('click',function(){
+                    console.log(document.querySelector('.ck:checked'))
+                    console.log(document.querySelector('.ck:checked').length)
+                    checkAll.checked = document.querySelector('.ck:checked').length === cks.length
+                })
+            }
+        })
+    </script>
+</body>
+</html>

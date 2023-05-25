@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS阶段/16.获取事件对象.html</title>
+    <!-- 事件对象是：对象，这个对象里有时间触发时的相关信息
+        事件对象在哪里：在时间绑定的回调函数的第一个参数就是事件对象
+        如下中function（e）中的e，默认书写，e，ev，evt，event事件
+     -->
+</head>
+<body>
+    <button>点击</button>
+    <input type="text">
+    <script>
+        const btn = document.querySelector('button')
+        btn.addEventListener('click',function(e){
+            console.log(e)
+        })
+
+        const input = document.querySelector('input')
+        input.addEventListener('keyup',function(e){
+            console.log(e.key)//打印按下的键
+            if (e.key ==='Enter'){
+                console.log('我按下了回车键')
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS阶段/18.事件流.html</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 600px;
+            background-color: pink;
+        }
+        .box1{
+            width: 400px;
+            height: 400px;
+            background-color:orange;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<!--
+    事件捕获：当一个事件触发后，会依次向下调用所有子元素的同名事件
+    事件冒泡：当一个事件触发后，会依次向上调用所有父级元素的同名事件，是默认存在的 -->
+<body>
+    <div class="box">我是爷爷
+        <div class="box1">我是爸爸
+            <div class="box2">我是儿子</div>
+         </div>
+
+    </div>
+    <script>
+        const box = document.querySelector('.box')
+        const box1 = document.querySelector('.box1')
+        const box2 = document.querySelector('.box2')
+        box.addEventListener('click',function(){
+            alert(`我是爷爷`)
+        },true)
+        box1.addEventListener('click',function(){
+            alert(`我是爸爸`)
+        },true)
+        box2.addEventListener('click',function(){
+            alert(`我是儿子`)
+        },true)
+    </script>
+</body>
+</html>
