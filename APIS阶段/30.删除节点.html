@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS阶段/30.删除节点.html</title>
+</head>
+<!-- 删除节点
+在javaScript原生DOM中，要删除元素必须通过父元素才能删除
+父元素.removeChild(要删除的元素)
+删除节点后就什么都没有了
+-->
+<body>
+    <ul>
+        <li>不要了</li>
+    </ul>
+    <script>
+        //删除节点：父元素.removeChild(要删除的元素)
+        const ul = document.querySelector('ul')
+        ul.removeChild(ul.children[0])//不能直接写li
+    </script>
+</body>
+</html>

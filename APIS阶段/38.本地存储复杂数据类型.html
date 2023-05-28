@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learn_js/APIS阶段/38.本地存储复杂数据类型.html</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            uname:'me',
+            age:18,
+            gender:'女'
+        }
+        // localStorage.setItem('obj',obj)
+
+
+        //1.复杂数据类型，必须转换为JSON字符串储存
+        localStorage.setItem('obj',JSON.stringify(obj))
+        //JSON 对象 属性和值有引号，{"uname":"me","age":18,"gender":"女"}
+        //{"uname":"me","age":18,"gender":"女"}
+
+        //2.把JSON字符串转换为对象
+        const str = localStorage.getItem('obj')
+        console.log(JSON.parse(str))
+    </script>
+</body>
+</html>

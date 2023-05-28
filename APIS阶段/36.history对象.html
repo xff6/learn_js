@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learn_js/APIS阶段/36.history对象.html</title>
+</head>
+<body>
+    <button class="back">后退</button>
+    <button class="forward">前进</button>
+    <script>
+        const back = document.querySelector('.back')
+        const forward = document.querySelector('.forward')
+        back.addEventListener('click',function(){
+            //后退一步
+            // history.back()
+            history.go(-1)
+        })
+        forward.addEventListener('click',function(){
+            //前进一步
+            // history.forward()
+            history.go(1)
+        })
+    </script>
+</body>
+</html>

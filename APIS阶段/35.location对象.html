@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learn_js/APIS阶段/35.location对象.html</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="username">
+        <input type="password" name="pwd">
+        <!-- <button type="submit">提交</button> -->
+        <button class = 'reload'>刷新</button>
+    </form>
+
+    <a href="#/my">我的</a>
+    <a href="#/friend">关注</a>
+    <a href="#/download">下载</a>
+    <script>
+        //1.href经常用href  利用js的方法区跳转页面  不需要任何操作直接跳转页面（获取完整的url地址，对其赋值时用于地址的跳转）
+        // location.href = 'http://www.baidu.com'
+
+        //search 属性获取地址中携带的参数 ， 符号？后面的部分
+        console.log(location.search)
+
+        //hash 属性获取地址中的哈希值，符号#后面部分
+        console.log(localStorage.hash)
+
+        //reload 方法用来刷新当前页面，传入参数true时表示强制刷新
+        const reload = document.querySelector('.reload')
+        reload.addEventListener('click',function(){
+            //刷新
+            location.reload()
+            //强制刷新
+            location.reload(true)
+        })
+    </script>
+</body>
+</html>

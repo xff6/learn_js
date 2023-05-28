@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learn_js/APIS阶段/37.localStorage存储.html</title>
+</head>
+<!-- localString ：可以将数据永久的存储在本地（用户的电脑），除非手动删除，否则关闭页面也会存在-->
+<body>
+    <script>
+        //1.要存储一个名字  uname  mememe
+        //localStorange.setItem('键','值')
+        localStorage.setItem('uname','mememe')
+
+        //2.获取方式    localStorage.getItem('键')
+        console.log(localStorage.getItem('uname'))
+
+        //3.删除本地储存 只删除名字   localStorage.removeItem('键')
+        localStorage.removeItem('uname')
+
+        //4.改
+        localStorage.setItem('uname','pink')
+
+
+
+        //存一个年龄
+        //本地存储只能存储 *****    字符串    *****数据类型
+        localStorage.setItem('age',18)
+        console.log(localStorage.getItem('age'))
+    </script>
+</body>
+</html>
