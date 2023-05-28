@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 400px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        //当前窗口宽高 window   resize浏览器窗口大小变化发生的时候触发的事件
+        window.addEventListener('resize',function(){
+            let w = document.documentElement.clientWidth
+            console.log(w)
+        })
+        //获取当前元素宽高 ： clinentWidth clineHight    不包含边框
+        const div =document.querySelector('div')
+        console.log(div.clientWidth)
+
+        // 获取元素自身的宽高，包含自身设得宽高，padding，border   ：offsetWidth offsetHeight
+        //获取出来的是数值，方便计算，获取的是可视宽高，如果盒子是隐藏的，获取的结果为0
+
+
+        //获取位置：  获取元素距离自己点位父级元素的左、上距离：  offsetLeft 和offsetTop 是只读属性
+    </script>
+</body>
+</html>

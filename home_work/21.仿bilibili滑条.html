@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home_work/21.仿bilibili滑条.html</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            -webkit-font-smoothing:antialiased;
+            -webkit-tap-highlinght-color:rgba(0,0,0,0);
+        }
+        div,body,html{
+            margin: 0px;
+            padding: 0px;
+            border: none;
+        }
+        .head{
+            width: 375px;
+            height: 667px;
+            margin:0 auto;
+            background-color: skyblue;
+        }
+        .nav{
+            /* width: 1500px; */
+            position:relative;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            border-bottom: 1px solid #e7e7e7;
+            overflow: hidden;
+        }
+        .tab_list{
+            overflow: hidden;
+            display:flex;
+        }
+        a{
+            padding:0 30px;
+            white-space: nowrap;
+            font-size: 16px;
+            height:60px;
+            line-height:60px;
+            text-decoration: none;
+            color:black;
+        }
+        .line{
+            position:absolute;
+            left: 30px;
+            bottom:0;
+            width: 35px;
+            height: 4px;
+            background-color: #fb7299;
+            transition: all 3s;/* all 表示所有属性都应用过渡效果平移时间为三秒*/
+        }
+    </style>
+</head>
+<body>
+    <!-- 主页面：版心 -->
+    <div class="head">
+          <!-- 很宽的盒子 -->
+        <div class="nav">
+                <div class="tab_list">
+                <a href="#" alt="" >首页</a>
+                <a href="#" alt="" >动画</a>
+                <a href="#" alt="" >番剧</a>
+                <a href="#" alt="" >国创</a>
+                <a href="#" alt="" >音乐</a>
+                <a href="#" alt="" >舞蹈</a>
+                <a href="#" alt="" >电影</a>
+                </div>
+                <!-- 红色线 -->
+                <div class="line"></div>
+        </div>
+    </div>
+    <script>
+        //1.获取父元素，添加事件委托
+        const list = document.querySelector('.tab_list')
+        const line = document.querySelector('.line')
+        //2.给a注册事件
+        list.addEventListener('click',function(e){
+
+            //判断点击的是a
+            //判断用户是否点击了页面上的超链接   e.target.tagName==='A'
+            //得到当前链接的 offsetLeft:距离其父元素的左边距离
+            // console.log(e.target.offsetLeft)
+            if(e.target.tagName==='A'){
+                line.style.transform = `translateX(${e.target.offsetLeft}px)`
+            }
+        })
+
+    </script>
+</body>
+</html>

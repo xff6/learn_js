@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS阶段/27.DOM节点.html</title>
+</head>
+<!-- DOM节点：DOM树里的每个内容都称为节点
+Dom节点的分类：元素节点：div    属性节点：class属性   文本几点：比如标签里的文字
+重点：元素节点，可以更好地额理清标签元素之间的关系
+-->
+<body>
+    <i>xx拉拉</i>
+    <div class="yeye">
+        <div class="dad">
+            <div class="baby"></div>
+    </div>
+    </div>
+    <script>
+        //1.父节点
+        const baby = document.querySelector('.baby')
+        console.log(baby)
+        console.log(baby.parentNode)//获取爸爸
+        console.log(baby.parentNode.parentNode)//获取爸爸的爸爸，爷爷
+    </script>
+</body>
+
+</html>

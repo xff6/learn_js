@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home_work/23.毕业倒计时效果.html</title>
+    <style>
+     .countdown {
+      width: 280px;
+      height: 350px;
+      text-align: center;
+      line-height: 1;
+      color: #fff;
+      background-color: brown;
+      /* background-size: 240px; */
+      /* float: left; */
+      overflow: hidden;
+    }
+
+    .countdown .next {
+      font-size: 16px;
+      margin: 25px 0 14px;
+    }
+
+    .countdown .title {
+      font-size: 33px;
+    }
+
+    .countdown .tips {
+      margin-top: 80px;
+      font-size: 23px;
+    }
+
+    .countdown .clock {
+      width: auto;
+      margin-left: 40px;
+      /* overflow: hidden; */
+      display: flex;
+    }
+
+    .countdown .clock span,
+    .countdown .clock i {
+      display: block;
+      text-align: center;
+      line-height: 34px;
+      font-size: 23px;
+    }
+    .countdown .clock span {
+      width: 40px;
+      height: 34px;
+      border-radius: 2px;
+      background-color: #303430;
+    }
+
+    .countdown .clock i {
+      width: 30px;
+      font-style: normal;
+    }
+    </style>
+</head>
+<body>
+    <div class="countdown">
+        <p class="next">今天是2023年5月27日</p>
+        <p class="title">毕业倒计时</p>
+        <p class="clock">
+            <span id="da">12</span>
+            <i>天</i>
+            <span id="hour">12</span>
+            <i>时</i>
+            <span id="minutes">12</span>
+            <i>分</i>
+        </p>
+        <p class="tips">2025年7月1日毕业</p>
+    </div>
+</body>
+<script>
+    //函数封装 getCountTime
+    function getCountTime(){
+        //1.得到当前的时间戳
+        const now = +new Date()
+        //2.得到将来的时间戳
+        const future = +new Date('2025-7-1 08:00:00')
+        //3.得到剩余的时间戳count 记得转换为秒数
+        const count = (future - now)/1000
+        let d = parseInt(count / 60 / 60 / 24)
+        let h = parseInt(count / 60 / 60 % 24)
+        h = h < 10 ? '0' + h : h
+        let m = parseInt(count / 60 % 60)
+        m = m < 10 ? '0' + m : m
+        //   let s = parseInt(count % 60)
+        //   s = s < 10 ? '0' + s : s
+        //4.转换为时分秒
+        console.log(d,h, m)
+        const date = document.querySelector('#da')
+        const hour = document.querySelector('#hour')
+        const minutes = document.querySelector('#minutes')
+        //   const second = document.querySelector('#second')
+        //5.把时分秒写进盒子里
+        da.innerHTML = d
+        hour.innerHTML = h
+        minutes.innerHTML = m
+    }
+    getCountTime()
+    setInterval(getCountTime,1000)
+   
+
+
+</script>
+</html>

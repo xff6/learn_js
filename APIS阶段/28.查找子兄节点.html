@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS阶段/28.兄节点.html</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <script>
+        const ul = document.querySelector('ul')
+        // console.log(ul.childNodes)//ul的所有子元素 是一个伪数组
+        const li2 = document.querySelector('ul li:nth-child(2)')
+        console.log(li2.nextElementSibling)//下一个兄弟
+        console.log(li2.previousElementSibling)//上一个兄弟
+    </script>
+</body>
+</html>

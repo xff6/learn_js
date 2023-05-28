@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS阶段/24.offsetLeft.html</title>
+    <style>
+        body{
+            padding:0;
+            border:0;
+            margin: 0;
+        }
+        div{
+            width: 300px;
+            height: 400px;
+            background-color: pink;
+            margin:30px;
+            padding:0;
+            border:none;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="box1"></div>
+    </div>
+    <script>
+        const div = document.querySelector('div')
+        const son = document.querySelector('.box1')
+        //检测盒子的位置，相对于最近一级带有定位的祖先元素的位置
+        console.log(son.offsetLeft)
+        console.log(div.offsetLeft)
+
+
+
+        //获取元素大小位置:   返回元素大小及其相对于视口的位置
+        console.log(div.getBoundingClientRect())
+    </script>
+</body>
+</html>

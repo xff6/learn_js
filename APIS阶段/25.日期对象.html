@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS阶段/25.日期对象.html</title>
+</head>
+<!-- 实例化：  ：在代码中发现了关键字时new，一般将这个操作称为实例化 -->
+<body>
+    <script>
+        //1.实例化new
+        const date = new Date()
+        console.log(date)
+        //2.指定时间
+        const date1 = new Date('2023-6-1  08:30:00')
+        console.log(date1)
+
+        //二：日期对象方法  date.getFullYear
+        console.log(date.getFullYear())
+        console.log(date.getMonth()+1) //月份从0开始，0-11，所以要加一
+        console.log(date.getDate())//获取月份中的每一天，不同月份取值也不同
+        console.log(date.getDay())//星期也是从零开始，0-6；所以要加一
+        console.log(date.getHours())//0-23
+        console.log(date.getMinutes())//0-59
+        console.log(date.getSeconds())//0-59
+
+
+        //显示格式化时间
+        function getMydate(){
+            const date = new Date()//时间要写在循环里面，不然时间会是一个固定的量
+            let year = date.getFullYear()
+            let  month = date.getMonth()+1
+            let da = date.getDate()
+            let hour = date.getHours()
+            let min = date.getMinutes()
+            let second = date.getSeconds()
+
+            let month1 = month < 10 ? '0' + month : month
+            let da1 = da < 10 ? '0'+ da :da
+            let hour1 = hour < 10 ? '0' + hour : hour
+            let min1 = min < 10 ? '0' + min : min
+            let second1 = second < 10 ?'0'+ second :second
+
+            return `${year}-${month1}-${da1} ${hour1}:${min1}:${second1}`
+        }
+        setInterval(function(){
+            console.log( getMydate())
+        },1000)
+    </script>
+</body>
+</html>

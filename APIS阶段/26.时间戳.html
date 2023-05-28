@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS阶段/26.时间戳.html</title>
+</head>
+<!-- 时间戳，用来计算倒计时的一种方式    1970年到现在的毫秒数 -->
+<body>
+    <script>
+        //1.得到时间戳 getTime()
+        const date = new Date()
+        console.log(date.getTime())
+        //2. +newDate()
+        console.log(+new Date())
+        //Date.now()  只能得到当前的时间戳，不能指定时间戳
+        console.log(Date.now())
+
+        //2. +newDate()
+        console.log(+new Date())
+        console.log('------------------')
+        console.log(+new Date('2023-6-1 08:00:00'))
+
+        const arr = ['星期天','星期一','星期二','星三','星期四','星期五','星期六']
+        // getDay()//取值是0-6；其中0代表星期天
+        console.log(arr[new Date().getDay()])
+    </script>
+</body>
+</html>
