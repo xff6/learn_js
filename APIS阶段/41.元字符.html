@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS阶段/41.元字符.html</title>
+</head>
+<!-- 
+    元字符：是一些具有特殊含义的字符。极大地提高了灵活性和提高了强大的匹配功能
+    比如:英文26个字母，我们使用元字符[a-z]简单和灵活
+ -->
+<body>
+    <script>
+       //元字符
+       console.log(/哈/.test('哈'))//true
+       console.log(/哈哈/.test('哈哈'))//true
+       console.log(/二哈/.test('二哈'))//true
+
+       //1.边界符     ^ 表示开头   $ 表示结尾
+       console.log(/^哈/.test('哈'))//true
+       console.log(/^哈/.test('哈哈'))//true
+       console.log(/^哈/.test('二哈'))//flase
+       console.log(/^哈$/.test('哈哈'))//flase
+    
+       console.log(/^哈$/.test('哈'))//true  只有这种情况为true，其余全为flase
+
+       //2.加量词  ：用来表示某个模式出现的次数
+       /* 
+       * 重复零次或者更多次
+       +重复一次或者更多次
+       ？重复零次或者一次
+       {n}重复n次
+       {n。}重复n次或者更多次
+       {n，m}重复n到m次
+       */
+
+       //量词 * 重复零次或者更多次
+      console.log('---------------')
+      console.log(/^哈$/.test('哈'))//true
+      console.log(/^哈*$/.test('哈'))//true
+      console.log(/^哈*$/.test('哈哈'))//true
+      console.log(/^哈*$/.test(''))//true
+      console.log(/^哈*$/.test('二哈'))//false  /^哈$/表示只允许出现   哈   其他字符一律不可以出现
+      console.log(/^哈*$/.test('哈啊哈'))//false
+      console.log('-----------------')
+      console.log('-----------------')
+      
+       //量词 + +重复一次或者更多次
+       console.log('---------------')
+      console.log(/^哈$/.test('哈'))//true
+      console.log(/^哈+$/.test('哈'))//true
+      console.log(/^哈+$/.test('哈哈'))//true
+      console.log(/^哈+$/.test(''))//false
+      console.log(/^哈+$/.test('二哈'))//false  /^哈$/表示只允许出现   哈   其他字符一律不可以出现
+      console.log(/^哈+$/.test('哈啊哈'))//false
+      console.log('-----------------')
+      console.log('-----------------')
+
+      //量词 ？重复零次或者一次
+      console.log('---------------')
+      console.log(/^哈$/.test('哈'))//true
+      console.log(/^哈?$/.test('哈'))//true
+      console.log(/^哈?$/.test('哈哈'))//false
+      console.log(/^哈?$/.test(''))//true
+      console.log(/^哈?$/.test('二哈'))//false  /^哈$/表示只允许出现   哈   其他字符一律不可以出？
+      console.log('---------------')
+      console.log('---------------')
+
+      //量词  {n} 写几次就必须出现几次
+      console.log(/^哈{4}$/.test('哈'))
+      console.log(/^哈{4}$/.test('哈哈'))
+      console.log(/^哈{4}$/.test('哈哈哈'))
+      console.log(/^哈{4}$/.test('哈哈哈哈'))
+      console.log(/^哈{4}$/.test('哈哈哈哈哈哈'))
+      console.log(/^哈{4}$/.test('哈哈哈哈哈哈哈'))
+      console.log('---------------')
+
+      //量词{n,} >=n次就对
+      console.log(/^哈{4,}$/.test('哈'))
+      console.log(/^哈{4,}$/.test('哈哈'))
+      console.log(/^哈{4,}$/.test('哈哈哈'))
+      console.log(/^哈{4,}$/.test('哈哈哈哈'))
+      console.log(/^哈{4,}$/.test('哈哈哈哈哈哈'))
+      console.log(/^哈{4,}$/.test('哈哈哈哈哈哈哈'))
+      console.log('---------------')
+
+      //量词{n,m}  >=n  <=m,n和m之间  逗号左右两边千万不能有空格,8
+      console.log(/^哈{4,8}$/.test('哈'))
+      console.log(/^哈{4,8}$/.test('哈哈'))
+      console.log(/^哈{4,8}$/.test('哈哈哈'))
+      console.log(/^哈{4,8}$/.test('哈哈哈哈'))
+      console.log(/^哈{4,8}$/.test('哈哈哈哈哈哈'))
+      console.log(/^哈{4,8}$/.test('哈哈哈哈哈哈哈'))
+      console.log(/^哈{4,8}$/.test('哈哈哈哈哈哈哈哈'))
+      console.log(/^哈{4,8}$/.test('哈哈哈哈哈哈哈哈哈'))
+      console.log('---------------')
+
+      //字符类 [abc]  只选abc中的一个即可
+      console.log(/^[abc]$/.test('a'))//true
+      console.log(/^[abc]$/.test('b'))//true
+      console.log(/^[abc]$/.test('c'))//true
+      console.log(/^[abc]$/.test('ab'))//false
+      console.log(/^[abc]$/.test('abc'))//false
+      console.log(/^[abc]{2}$/.test('ab'))//true
+      console.log(/^[abc]{2}$/.test('aa'))//true
+      console.log(/^[abc]$/.test(''))//false
+      console.log('---------------')
+      //字符类 [a-z] 表示[a-z]都可以  只选一个 (区分大小写)
+      console.log(/^[a-z]$/.test('p'))
+      console.log(/^[A-Z]$/.test('P'))
+      console.log(/^[a-zA-Z0-9]$/.test('p'))
+      console.log('---------------')
+
+      //字符类  ^ 加载中括号里面[]，表示除了，如下表示，除了大小写英文字母和数字都可以 ,同样只选一个
+      console.log(/^[^a-zA-Z0-9]$/.test('$'))
+
+      //字符类 . 除了换行符以外的任何单个字符
+
+
+      //字符类 预定义
+      /*
+        \d ：匹配 0-9         
+        \D ：0-9以外的字符
+        \w :任意数字、字母、下划线 [A_Za-z0-9_]
+        \W :任意数字、字母、下划线以外的 [^A_Za-z0-9_]
+        \s :匹配空格，（包括换行符，制表符，和空格符等），[\t\r\n\v\f]
+        \S :匹配非空格的字符，[^\t\r\n\v\f]
+      */
+      </script>
+
+
+    
+</body>
+</html>

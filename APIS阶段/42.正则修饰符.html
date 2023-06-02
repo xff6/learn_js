@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS阶段/42.正则修饰符.html</title>
+</head>
+<body>
+    <script>
+        /*
+          /正则表达式/修饰符 
+          i 
+          是ignore的缩写，正则匹配是字母不区分大小写   /^java$/i
+          g
+          是global的缩写，匹配所有满足正则表达式的结果
+        */
+         
+       // i  是ignore的缩写，正则匹配是字母不区分大小写   /^java$/i
+        console.log(/^java$/.test('java'))
+        console.log(/^java$/i.test('JAVA'))
+        console.log(/^java$/i.test('Java'))
+        //g 是global的缩写，匹配所有满足正则表达式的结果
+        //replace  字符串.replace(/正则表达式/，替换的文本)
+        const str = 'java是最甜的，我最喜欢java了'
+        const result = str.replace(/java/ig,'前端')//、表达式里的字符串不需要用引号
+        console.log(result)
+    </script>
+</body>
+</html>

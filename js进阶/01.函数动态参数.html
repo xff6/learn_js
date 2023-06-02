@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js进阶/01.函数动态参数.html</title>
+</head>
+<body>
+    <script>
+
+        //动态参数
+        // function getSum(){
+        //     //arguments 动态参数 只存在函数里面
+        //     //1.是个为数组
+        //     console.log(arguments)
+        //     let sum = 0
+        //     for (let i = 0 ; i < arguments.length; i++){
+        //         sum+=arguments[i]
+        //     }
+        //     console.log(sum)
+        // }
+        // getSum(2,3)
+
+
+        //剩余参数**（在函数参数中使用，得到真数组）
+        function getSum(a,b,...arr){//这里的a，b不在arr里面，a，b以外的数回存在arr里面，arr名字可以随便取值。
+            //arguments 动态参数 只存在函数里面
+            //1.是个****真数组****
+            console.log(arr)
+            let sum = a+b
+            for (let i = 0 ; i < arr.length; i++){
+                sum+=arr[i]
+            }
+            console.log(sum)
+        }
+        getSum(2,3)
+        getSum(2,3,4,5)
+
+        //
+    </script>
+</body>
+</html>

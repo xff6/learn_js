@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS阶段/40.正则表达式.html</title>
+    <style></style>
+</head>
+<!-- 
+    正则表达式：  适用于匹配字符串组合的模式。
+    在javaScript中，正则表达式也是对象
+    通常，用来查找。替换。那些复合正则表达式的文本，许多语言都支持正则表达式
+    作用：验证表单（匹配）
+          过滤敏感词（替换）
+          字符串提取我们想要的部分（提取）
+ -->
+<body>
+    <script>
+        const str = "我们在学习前端，希望前端可以高薪毕业"
+        // 1.定义正则表达式
+        const reg= /前端/    
+        //2.是否匹配   判断是否有符合正则表达式的字符串  reg.test(被检测的字符串)
+
+        //2.1  test方法 用于判断是否有符合规则的宗富川，返回的是布尔值，找到返回true 否则返回false *****重点使用
+        console.log( reg.test(str))
+
+        //2.2exec方法用于检索（查找）符合规则的字符串，找到返回数组，否则为null
+        console.log( reg.exec(str))
+    </script>   
+</body>
+</html>

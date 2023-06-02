@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home_work/27.过滤敏感词.html</title>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button type="submit">发布</button>
+    <div></div>
+    <script>
+        const tx = document.querySelector('textarea')
+        const btn = document.querySelector('button')
+        const div = document.querySelector('div')
+        btn.addEventListener('click',function(){ 
+            div.innerHTML =tx.value.replace(/哈哈|拉拉|丫丫/g,'****') 
+            tx.value=''
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js进阶/05.数组解构.html</title>
+</head>
+<body>
+    <script>
+        const arr = [1,2,3]
+        const [max,arg,min]=[1,2,3]
+        console.log(max)
+        //多级对象解构
+        const pig = {
+            name:'佩奇',
+            family:{
+                mother:"猪妈妈",
+                father:"猪爸爸",
+                sister:"乔治"
+            },
+            age:6
+        }
+        const {name,family:{mother,father,sister}} = pig
+        console.log(name)
+        console.log(mother)
+
+        const msg = {
+            "code":200,
+            "msg":"获取元素列表成功",
+            "data":[
+                {
+                    "id":1,
+                    "title":"啦啦啦阿里",
+                    "count":11
+                },
+                {
+                    "id":12,
+                    "title":"啦啦啦阿里222",
+                    "count":22
+                },
+                {
+                    "id":1,
+                    "title":"啦啦啦阿里333",
+                    "count":33
+                }
+            ]
+        }
+        //需求1，将msg对象，采用对象解构的方式，只选出data 方便后面使用
+        const {data} = msg
+        console.log(data)
+        //需求2：上面msg是后台传递过来的数据，我们需要把data选出当作参数传递给 函数
+        function render1({data}){
+            const {data} = arr
+            console.log(data)
+        }
+        render1(msg)  
+//需求3，为了防止名字混淆，更名data为mydata
+        function render({data:myData}){
+            //将获取过来的data数据 更名为myData
+            console.log(myData)
+        }
+        render(msg)
+        //传实参msg到数组解构{data:myData}
+    </script>
+</body>
+</html>

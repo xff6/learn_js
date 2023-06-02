@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js进阶/02.展开运算符.html</title>
+</head>
+<body>
+    <script>
+        /*
+        展开运算符：在数组中使用，数组展开
+        */
+        const arr1 = [1,2,3]
+        //展开运算符，可以展开数组
+        console.log(...arr1)
+        console.log(Math.max(1,2,3))//max()函数只能计算展开的数
+        console.log(Math.max(...arr1))//使用...arr可以计算数组的最大最小值
+
+        //2.合并数组
+        const  arr2 = [3,4,5]
+        const arr = [...arr1,...arr2]
+        console.log(arr)//得到数组(6) [1, 2, 3, 3, 4, 5]
+        console.log(...arr)//得到展开的数组的数1 2 3 3 4 5
+    </script>
+</body>
+</html>
