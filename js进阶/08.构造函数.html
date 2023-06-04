@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js进阶/08.创建对象的三种方式.html</title>
+</head>
+<body>
+    <script>
+        const obj = new Object({uname:'pink'})
+        console.log(obj)
+        //构造函数:是一种特殊的函数，主要用来初始化对象
+        /*用大写字母开头
+        只能有”new“操作执行,new关键字调用函数的行为被称为  实例化
+        构造函数内部不需要写return
+        */
+       function pig(name,age,hight){
+        this.name1= name
+        this.age1 = age
+        this.hight1 = hight
+       }
+       const pappa = new pig('lala',6,111)
+       const mum = new pig ('dudu',5,111)
+       console.log(pappa)
+
+    </script>
+</body>
+</html>

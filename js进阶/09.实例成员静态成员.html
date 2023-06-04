@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learn_js/js进阶/09.实例成员静态成员.html</title>
+</head>
+<body>
+    <script>
+        //实例成员和金泰成员
+        //1.实例成员：实例对象上的属性和方法是与实例成员
+        function pig (name){
+            this.name = name
+        }
+        const peiqi =new pig('佩奇')
+        const qiaozhi = new pig('乔治')//实例属性
+        peiqi.sayhi = ()=>{ //实例方法
+            console.log('hihi');
+        }
+        console.log(peiqi)
+
+
+        //2.静态成员 ： 构造函数上的属性和方法称为静态成员
+        function pig2 (name){
+            this.name = name
+        }
+        pig2.eyes = 2 //静态属性
+        pig2.sayhi = ()=>{ //静态方法
+            console.log(this);
+        }
+        pig2.sayhi()
+        console.log(pig2.eyes)//2
+    </script>
+</body>
+</html>
